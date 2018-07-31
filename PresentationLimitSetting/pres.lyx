@@ -1,0 +1,10862 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+%\usetheme{Warsaw}
+%\usetheme{Boadilla}
+%\usetheme{Madrid}
+\usetheme{Frankfurt}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing} 
+
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$-$}}
+
+\setbeamersize{text margin left=0.3cm,text margin right=0.5cm}
+\usecolortheme{orchid}
+\setbeamertemplate{footline}[text line]
+{
+ \leavevmode%
+    \hspace*{0.9\paperwidth}
+    \insertframenumber{} / \inserttotalframenumber%\hspace*{1ex}
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans lmss
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 2
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Limit determination - Emphasis on arbitrariness
+\end_layout
+
+\begin_layout Author
+E.
+ Busato
+\end_layout
+
+\begin_layout BeginFrame
+Outline
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout BeginFrame
+
+\end_layout
+
+\begin_layout Itemize
+Not addressed in this presentation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Shapes
+\end_layout
+
+\begin_layout Itemize
+Profiling
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Standard cut&count problem
+\end_layout
+
+\begin_layout Block
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+<1->
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{Notations}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+One or more backgrounds: 
+\color blue
+
+\begin_inset Formula $\sum b_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Signal with unknown x-sec: 
+\color blue
+
+\begin_inset Formula $s$
+\end_inset
+
+
+\color inherit
+ (free parameter)
+\end_layout
+
+\begin_layout Itemize
+Total expectation: 
+\color blue
+
+\begin_inset Formula $s+\sum b_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Observed number of events: 
+\color blue
+
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+When 
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
+ agrees with background yield, infer upper limit 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color red
+\begin_inset Formula $\boxed{s_{\text{up}}=\text{yield above which total expectation and observation disagree}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+To set limit one needs to
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color blue
+Know how 
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
+ is distributed
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Have a quantitative measure of the agreement between data and total expectation
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Distribution of 
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
+ - Terminology
+\end_layout
+
+\begin_layout Itemize
+Distribution of observation described by 
+\color red
+likelihood
+\color inherit
+ 
+\begin_inset Formula ${\cal L}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula ${\cal L}=\text{proba}(N_{\text{obs}};s+\sum\limits _{i}b_{i})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Likelihood also called 
+\color red
+statistical model
+\color inherit
+ or 
+\color red
+model
+\end_layout
+
+\begin_layout BeginFrame
+Two central problems to be addressed
+\end_layout
+
+\begin_layout Enumerate
+
+\color blue
+Build statistical model
+\end_layout
+
+\begin_layout Enumerate
+
+\color blue
+Infer 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+ from statistical model (i.e.
+ quantify agreement between observation and total expectation for each 
+\begin_inset Formula $s$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Important point: 
+\color red
+no unique solution to these problems
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ upper limit is a somewhat subjective notion (always relative to the choices
+ made to solve these problems)
+\end_layout
+
+\begin_layout BeginFrame
+Softwares
+\end_layout
+
+\begin_layout Itemize
+Throughout the presentation, three softwares implementing solutions to previous
+ problems will be discussed/compared/studied
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color red
+McLimit
+\color inherit
+: hybrid frequentist-bayesian
+\color blue
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+CLsGenerator
+\color inherit
+: hybrid frequentist-bayesian
+\color blue
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+BayesianMCMC
+\color inherit
+: bayesian (Markov Chain Monte Carlo)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\color blue
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+HistFactory and various RooStats implementations (almost) not described
+\end_layout
+
+\begin_layout BeginFrame
+CLsGenerator and BayesianMCMC
+\end_layout
+
+\begin_layout Itemize
+Use exactly the same statistical model
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Difference is on how inference is made
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\color blue
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Take same files as input
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Comparison straightforward
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Single channel - No uncertainties
+\end_layout
+
+\begin_layout BeginFrame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{2cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Large Single channel - No uncertainties}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Statistical model and inference
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Statistical model
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+In our experiments, 
+\begin_inset Formula $N_{\text{obs}}\sim Binomial$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sim$
+\end_inset
+
+ means 
+\begin_inset Quotes eld
+\end_inset
+
+is distributed according to
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Approximated by Poisson
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boxed{{\cal L}=\frac{\left(s+\sum\limits _{i}b_{i}\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-\left(s+\sum\limits _{i}b_{i}\right)}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Inference of 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two families of methods: 
+\color red
+frequentist
+\color inherit
+ and 
+\color red
+bayesian
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Frequentist solution
+\end_layout
+
+\begin_layout Itemize
+Consider the case: 
+\begin_inset Formula $N_{\text{obs}}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum\limits _{i}b_{i}=0.82$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/poissonDistributionBkgOnly.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution
+\end_layout
+
+\begin_layout Itemize
+Consider the case: 
+\begin_inset Formula $N_{\text{obs}}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum\limits _{i}b_{i}=0.82$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/poissonDistributionSig1.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution
+\end_layout
+
+\begin_layout Itemize
+Consider the case: 
+\begin_inset Formula $N_{\text{obs}}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum\limits _{i}b_{i}=0.82$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/poissonDistributionSig4.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution
+\end_layout
+
+\begin_layout Itemize
+Consider the case: 
+\begin_inset Formula $N_{\text{obs}}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum\limits _{i}b_{i}=0.82$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/poissonDistributionSig8.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution - 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+ method
+\end_layout
+
+\begin_layout Itemize
+Quantitative measure of agreement: 
+\begin_inset Formula $p-value$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p-value=\underbrace{\sum\limits _{N=0}^{N_{\text{obs}}}{\cal P}(N;s+\sum\limits _{i}b_{i})}_{\text{c. d. f. }}=\sum\limits _{N=0}^{N_{\text{obs}}}\frac{\left(s+\sum\limits _{i}b_{i}\right)^{N}}{N!}e^{-\left(s+\sum\limits _{i}b_{i}\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/poissonDistributionSig8Pval.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color magenta
+Remark: this 
+\begin_inset Formula $p-value$
+\end_inset
+
+ is also called 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution - 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+ method
+\end_layout
+
+\begin_layout Itemize
+For which values of 
+\begin_inset Formula $s$
+\end_inset
+
+ does the observation disagree with total expectation ?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Usually we take values for which 
+\begin_inset Formula $p-value\leq\alpha$
+\end_inset
+
+ with 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Upper limit 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+ is the smallest of all values for which observation and total expectation
+ disagree
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boxed{CL_{s+b}(s_{\text{up}})=\alpha}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Previous example: 
+\begin_inset Formula $s_{\text{up}}=3.92$
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution - 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+ method
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/plotCLsbVsS_1.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution - 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+ method
+\end_layout
+
+\begin_layout Itemize
+Even though 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+ seems a valid method, it's has a problem
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/plotLimitVsNbkg_CLsb_1.pdf
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ downward fluctuation leads to 
+\begin_inset Formula $s_{\text{up}}<\text{0}$
+\end_inset
+
+ ! 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+A fix could be to impose 
+\begin_inset Formula $s_{\text{up }}\geq0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Not satisfactory: all models predicting signal (even those predicting very
+ small yield) are excluded with 5% probability
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Frequentist solution - 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ method
+\end_layout
+
+\begin_layout Itemize
+Solution to previous issue: 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Instead of defining 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+ by 
+\begin_inset Formula $CL_{s+b}(s_{\text{up}})=\alpha$
+\end_inset
+
+, define it by
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boxed{CL_{s}(s_{\text{up}})=\alpha}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $CL_{s}=\frac{CL_{s+b}}{CL_{b}}$
+\end_inset
+
+, with
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $CL_{b}=\sum\limits _{N=0}^{N_{\text{obs}}}\frac{\left(\sum b_{i}\right)^{N}}{N!}e^{-\sum b_{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Frequentist solution - 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ method
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/poissonDistributionSig8PvalBkg.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution - 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ method
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/plotCLsbVsS_2.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Remark: upper limit always worse with 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ (in this example: 
+\begin_inset Formula $s_{\text{up}}=4.19$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution - 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ method
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/plotLimitVsNbkg_CLsb_2.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist solution
+\end_layout
+
+\begin_layout Itemize
+Comments
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Other solutions than 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ exist to solve 
+\begin_inset Formula $s_{\text{up}}\leq0$
+\end_inset
+
+ problem (e.g.
+ PCL)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ is the current recommendation in ATLAS
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Previous 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ procedure is what CLsGenerator and McLimit do in single channel/no uncertaintie
+s case
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Bayesian solution
+\end_layout
+
+\begin_layout Itemize
+Reminder: Bayes' theorem
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P(A|B)=\frac{P(B|A)P(A)}{P(B)}\propto P(B|A)P(A)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Bayesian methods use this theorem to make inference
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Bayes' theorem applied to previous example
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset Formula $\underbrace{f(s|N_{\text{obs}})}_{\text{posterior}}\propto\underbrace{P(N_{\text{obs}}|s)}_{\text{likelihood}}\underbrace{\pi(s)}_{\text{prior}}=\frac{\left(s+\sum\limits _{i}b_{i}\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-\left(s+\sum\limits _{i}b_{i}\right)}\pi(s)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\color magenta
+Remark: philosophically very different from frequentist methods
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\color magenta
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $s$
+\end_inset
+
+ considered as a random variable
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+hence the notation 
+\begin_inset Formula $P(N_{\text{obs}}|s)=P(N_{\text{obs}};s)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Bayesian solution
+\end_layout
+
+\begin_layout Itemize
+Upper limit 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+ defined by
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boxed{{\displaystyle \int_{0}^{s_{\text{up}}}f(s|N_{\text{obs}})\text{d}s}=1-\alpha}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For previous example (
+\begin_inset Formula $N_{\text{obs}}=1,$
+\end_inset
+
+ 
+\begin_inset Formula $\sum b_{i}=0.82$
+\end_inset
+
+) with uniform prior
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/posteriorExample.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rightarrow s_{\text{up}}=4.19$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Frequentist Vs Bayesian
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ and bayesian with uniform prior strictly equivalent in simple situation
+ considered here
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Proof}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{small}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $f(s|N_{\text{obs}})=\frac{P(N_{\text{obs}}|s)}{{\displaystyle \int_{0}^{\infty}}P(N_{\text{obs}}|s)\text{ds}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+it can be shown that
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula ${\displaystyle \int_{0}^{\infty}}P(N_{\text{obs}}|s)ds=CL_{b}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $1-\alpha={\displaystyle \int_{0}^{s_{\text{up}}}f(s|N_{\text{obs}})\text{d}s}=\frac{1}{CL_{b}}{\displaystyle \int_{0}^{s_{\text{up}}}}P(N_{\text{obs}}|s)\text{ds}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+it can be shown that 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula ${\displaystyle {\displaystyle \int_{0}^{s_{\text{up}}}}}P(N_{\text{obs}}|s)\text{ds}=CL_{b}-CL_{s+b}(s_{\text{up}})$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow\alpha=\frac{CL_{s+b}(s_{\text{up}})}{CL_{b}}=CL_{s}(s_{\text{up}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{small}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Analytical solution
+\end_layout
+
+\begin_layout Itemize
+No need to run sophisticated tools to compute previous limits
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\family roman
+\color red
+ 
+\family default
+Analytical solutions exist
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Analytical solutions (proofs on next slide)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+\color black
+\begin_inset Formula $\boxed{s_{\text{up}}=0.5\times F_{\chi^{2}}^{-1}\left(1-\alpha;2\left(N_{\text{obs}}+1\right)\right)-\sum b_{i}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+\color blue
+0.5*ROOT::Math::chisquared_quantile(1-
+\begin_inset Formula $\alpha$
+\end_inset
+
+,2*(
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
++1))-
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.4cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ and bayesian with uniform prior :
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+\color black
+\begin_inset Formula $\boxed{s_{\text{up}}=0.5\times F_{\chi^{2}}^{-1}\left(1-\alpha\left[1-F_{\chi^{2}}\left(2\sum b_{i};2\left(N_{\text{obs}}+1\right)\right)\right];2\left(N_{\text{obs}}+1\right)\right)-\sum b_{i}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+\color blue
+0.5*ROOT::Math::chisquared_quantile(1-
+\begin_inset Formula $\alpha$
+\end_inset
+
+*(1-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{flushright}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+\color blue
+ROOT::Math::chisquared_cdf(2*
+\begin_inset Formula $b$
+\end_inset
+
+,2*(
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
++1))),2*(
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
++1))-
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushright}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout BeginFrame
+Analytical solution
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+underline{Demonstration of previous relations}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Consider first a 
+\begin_inset Formula $CL_{\text{s+b}}$
+\end_inset
+
+ limit.
+ Upper limit 
+\begin_inset Formula $\mu_{\text{up}}$
+\end_inset
+
+ at 
+\begin_inset Formula $1-\alpha$
+\end_inset
+
+ confidence level given by
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $CL_{\text{s+b}}={\displaystyle \sum_{n=0}^{N\text{obs}}}{\cal P}(N;s+\sum b_{i})=\alpha$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Poisson c.
+ d.
+ f.
+ given by
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula ${\displaystyle \sum_{n=0}^{N_{\text{obs}}}{\cal P}}(N;s+\sum b_{i})=1-F_{\chi^{2}}\left(2(s+\sum b_{i});2\left(N_{\text{obs}}+1\right)\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $s_{\text{up}}=0.5\times F_{\chi^{2}}^{-1}\left(1-\alpha;2\left(N_{\text{obs}}+1\right)\right)-\sum b_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+, just need to replace 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ by 
+\begin_inset Formula $\alpha\times CL_{\text{b}}$
+\end_inset
+
+ (since 
+\begin_inset Formula $CL_{b}$
+\end_inset
+
+ is independant of signal)
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Remark
+\end_layout
+
+\begin_layout Itemize
+Note that previous 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+ formula is the one used in SS analysis to set upper limit for samples with
+ yield=0 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\text{Yield}_{\text{up}}=0.5\times F_{\chi^{2}}^{-1}\left(0.68;2\left(0+1\right)\right)\simeq1.14$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Summary of methods discussed so far
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+Method
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+Comment
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+Frequentist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+unphysical when downward fluctuation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+equivalent to bayesian w/ uniform prior
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+PCL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+maybe solution of the future
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+Bayesian
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+Bayesian (uniform prior)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+equivalent to 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\color black
+Bayesian (other priors)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Quite a lot of solutions for such a simple problem
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\color blue
+It's just the beginning !
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Sensitivity of an analysis
+\end_layout
+
+\begin_layout Itemize
+Sensitivity of an analysis not given by 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+ but by some quantity measuring by how much 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+ differs from some nominal signal expectation 
+\begin_inset Formula $s_{\text{nom}}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Example: SUSY predicts 
+\begin_inset Formula $s_{\text{nom}}$
+\end_inset
+
+ sgluon events after selection
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+if 
+\begin_inset Formula $s_{\text{up}}<s_{\text{nom}}$
+\end_inset
+
+: sgluon excluded
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $s_{\text{up}}\text{\geq}s_{\text{nom}}$
+\end_inset
+
+: sgluon not excluded
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Sensitivity usually given by 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color red
+\begin_inset Formula $\mu_{\text{up}}=\frac{s_{\text{up}}}{s_{\text{nom}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $\mu_{\text{up}}\gg1$
+\end_inset
+
+, analysis not sensitive 
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Comments on historical 
+\begin_inset Formula $\mu_{\text{up}}=1.64\sqrt{b}/s_{\text{nom}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+In order to compute sensitivities fast, people sometimes use
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color red
+\begin_inset Formula $\mu_{\textup{up}}=1.64\frac{\sqrt{b}}{s_{\text{nom}}}\qquad$
+\end_inset
+
+
+\color inherit
+ 
+\size footnotesize
+\color black
+(
+\begin_inset Formula $b:$
+\end_inset
+
+ total background)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+From this formula one often predicts that sensitivity should scale as 
+\begin_inset Formula $1/\sqrt{\text{Lumi}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Where does this come from ? 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ What approximations are behind ? 
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Can we do better ?
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Is the 
+\begin_inset Formula $1/\sqrt{\text{Lumi}}$
+\end_inset
+
+ scaling correct ?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Gaussian approximation
+\end_layout
+
+\begin_layout Itemize
+Analytical solution in gaussian approximation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+When 
+\begin_inset Formula $s+\sum b_{i}$
+\end_inset
+
+ is large, poisson 
+\begin_inset Formula $\simeq$
+\end_inset
+
+ gaussian with 
+\begin_inset Formula $\sigma=\sqrt{s+\sum b_{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+We can show that, for 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+ (see next slide)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\boxed{{s_{\text{up}}=N_{\text{obs}}-\sum b_{i}+\frac{\left[\Phi^{-1}(1-\alpha)\right]^{2}}{2}\left[1+\sqrt{1+4\frac{N_{\text{obs}}}{\left[\Phi^{-1}(1-\alpha)\right]^{2}}}\right]}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ is the c.
+ d.
+ f.
+ of the standard normal distribution
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout BeginFrame
+Gaussian approximation - Demonstration
+\end_layout
+
+\begin_layout Itemize
+For 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+, we have by definition
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $CL_{\text{s+b}}={\displaystyle \int_{0}^{N_{\text{{obs}}}}G\left(N;s_{\text{up}}+\sum b_{i},\sqrt{{s_{\text{up}}+\sum b_{i}}}\right)}\text{d}N=\alpha$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{\Rightarrow}$
+\end_inset
+
+ 
+\begin_inset Formula ${\displaystyle \int_{0}^{\frac{N_{\text{obs}}-(s_{\text{up}}+\sum b_{i})}{\sqrt{s_{\text{up}}+\sum b_{i}}}}G(N;0,1)}\text{d}N=\alpha$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{\Rightarrow}$
+\end_inset
+
+ 
+\begin_inset Formula $\Phi\left(\frac{N_{\text{\text{obs}}}-(s_{\text{up}}+\sum b_{i})}{\sqrt{s_{\text{up}}+\sum b_{i}}}\right)=\alpha$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow N_{\text{obs}}-(s_{\text{up}}+\sum b_{i})=-\sqrt{s_{\text{up}}+\sum b_{i}}\times\Phi^{-1}(1-\alpha)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solving for 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+ gives expression on previous slide
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+, just need to replace 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ by 
+\begin_inset Formula $\alpha\times\underbrace{\Phi\left(\frac{N_{\text{obs}-\sum b_{i}}}{\sqrt{\sum b_{i}}}\right)}_{CL_{b}}$
+\end_inset
+
+ (as for Poisson)
+\end_layout
+
+\begin_layout BeginFrame
+Comments on historical 
+\begin_inset Formula $\mu_{\text{up}}=1.64\sqrt{b}/s_{\text{nom}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\boxed{{\mu_{\text{up}}=\frac{N_{\text{obs}}-\sum b_{i}}{s_{\text{nom}}}+\frac{\left[\Phi^{-1}(1-\alpha)\right]^{2}}{2s_{\text{nom}}}\left[1+\sqrt{1+4\frac{N_{\text{obs}}}{\left[\Phi^{-1}(1-\alpha)\right]^{2}}}\right]}}$
+\end_inset
+
+
+\begin_inset Formula $\quad(\star)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Let's assume that
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $N_{\text{obs}}=\sum b_{i}$
+\end_inset
+
+ (i.e.
+ expected limit)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\sum b_{i}\gg\left[\Phi^{-1}(1-\alpha)\right]^{2}/4$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+note that 
+\begin_inset Formula $\Phi^{-1}(1-\alpha)=1.64$
+\end_inset
+
+ for 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+, corresponding to 
+\begin_inset Formula $\sum b_{i}\gg0.7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+this assumption corresponds more or less to the gaussian approx.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Then, one sees directly from 
+\begin_inset Formula $(\star)$
+\end_inset
+
+ that
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boxed{{\mu_{\text{up}}\simeq\Phi^{-1}(1-\alpha)\frac{\sqrt{\sum b_{i}}}{s_{\text{nom}}}=1.64\frac{\sqrt{\sum b_{i}}}{s_{\text{nom}}}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Comments on historical 
+\begin_inset Formula $\mu_{\text{up}}=1.64\sqrt{b}/s_{\text{nom}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Where does this come from ? What approximations are behind ?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $CL_{s+b}$
+\end_inset
+
+ method under gaussian approximation
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Can we do better ?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Yes: 
+\color red
+use analytical 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ poisson solution (no more complicated to use and more correct)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size footnotesize
+\color black
+\begin_inset Formula $\boxed{s_{\text{up}}=0.5\times F_{\chi^{2}}^{-1}\left(1-\alpha\left[1-F_{\chi^{2}}\left(2\sum b_{i};2\left(N_{\text{obs}}+1\right)\right)\right];2\left(N_{\text{obs}}+1\right)\right)-\sum b_{i}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+\color blue
+0.5*ROOT::Math::chisquared_quantile(1-
+\begin_inset Formula $\alpha$
+\end_inset
+
+*(1-
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{flushright}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size footnotesize
+\color blue
+ROOT::Math::chisquared_cdf(2*
+\begin_inset Formula $b$
+\end_inset
+
+,2*(
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
++1))),2*(
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
++1))-
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushright}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Comments on historical 
+\begin_inset Formula $\mu_{\text{up}}=1.64\sqrt{b}/s_{\text{nom}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Consider example with 
+\begin_inset Formula $b=0.82$
+\end_inset
+
+, 
+\begin_inset Formula $s_{\text{nom}}=2.49$
+\end_inset
+
+ for Lumi
+\begin_inset Formula $=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/plotLimitVsLumiAnalyticalBadApprox1.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Comments on historical 
+\begin_inset Formula $\mu_{\text{up}}=1.64\sqrt{b}/s_{\text{nom}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+Is the 
+\begin_inset Formula $1/\sqrt{\text{Lumi}}$
+\end_inset
+
+ scaling correct ?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ As before: 
+\begin_inset Formula $b=0.82$
+\end_inset
+
+, 
+\begin_inset Formula $s_{\text{nom}}=2.49$
+\end_inset
+
+ for Lumi
+\begin_inset Formula $=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/plotLimitVsLumiAnalyticalBadApprox2.pdf
+	scale 37
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $1/\sqrt{\text{Lumi}}$
+\end_inset
+
+ scaling rather good approximation when number of events not too small 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Softwares
+\end_layout
+
+\begin_layout Itemize
+No softwares needed, use analytical (unless you want bayesian w/ non-uniform
+ prior or profile likelihood)
+\end_layout
+
+\begin_layout BeginFrame
+Validation of CLsGenerator and BayesianMCMC
+\end_layout
+
+\begin_layout Itemize
+Use analytical solution to validate CLsGenerator and BayesianMCMC 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cLimitVsLumi1.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cLimitCLsGenVsBayesian.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ CLsGenerator and BayesianMCMC validated in single channel - no uncertainties
+ case
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Multiple channels - No uncertainties
+\end_layout
+
+\begin_layout BeginFrame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{2cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Large Multiple channels - No uncertainties}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Generalizing frequentist methods
+\end_layout
+
+\begin_layout Itemize
+Methods presented in simple 
+\begin_inset Quotes eld
+\end_inset
+
+Single channel - No uncertainties
+\begin_inset Quotes erd
+\end_inset
+
+ case can be used as prototypes for more general cases
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+What we did previously was to
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\color blue
+Pick variable with discrimating power between background and signal+background
+ hypothesis
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\color blue
+Determine distribution of this variable
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\color blue
+Compute 
+\begin_inset Formula $p-values$
+\end_inset
+
+ as a function of signal yield 
+\begin_inset Formula $s$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\color blue
+Determine upper limit 
+\begin_inset Formula $s_{\text{up}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+All frequentist methods based on this general scheme
+\end_layout
+
+\begin_layout BeginFrame
+Generalizing frequentist methods
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename macros/poissonDistributionSig8PvalBkg.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Generalizing frequentist methods - Test statistic
+\end_layout
+
+\begin_layout Itemize
+
+\color blue
+How to choose variable ?
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Need single discriminating variable summarizing information from all channels
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Can't use observed yield anymore
+\end_layout
+
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 
+\color red
+Use likelihood based variables
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boxed{{\cal L}_{\text{joint}}={\displaystyle \prod_{c:\text{channels}}{\cal L}_{\text{c}}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Discriminating power as good as possible
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ 
+\color red
+Likelihood ratios are a good choice (Neyman-Pearson Lemma)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Terminology: this variable is called 
+\color red
+test statistic
+\color inherit
+ or simply 
+\color red
+test
+\end_layout
+
+\begin_layout BeginFrame
+Generalizing frequentist methods - Test statistic
+\end_layout
+
+\begin_layout Itemize
+Once a test is chosen, apply the rest of the procedure as before
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/plotTestStatVariousMuExample1.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Generalizing frequentist methods - Test statistic
+\end_layout
+
+\begin_layout Itemize
+Once a test is chosen, apply the rest of the procedure as before
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/plotTestStatVariousMuExample2.pdf
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Common test statistics
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color black
+Test statistic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color black
+Comment
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color black
+Software
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default" interlinespace="default">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{\mu}=-2\ln\frac{{\cal L}(\mu)}{{\cal L}(\mu=0)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\color black
+Used at LEP, Tevatron, LHC
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\color black
+McLimit, CLsGenerator, RooStats
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default" interlinespace="default">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(
+\size footnotesize
+\color black
+simple likelihood ratio
+\size default
+\color inherit
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default" interlinespace="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{\mu}'=-2\ln\frac{{\cal L}(\mu)}{{\cal L}(\hat{\mu})}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\color black
+Used at LHC
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\color black
+RooStats
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="default" bottomspace="default" interlinespace="default">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(
+\size footnotesize
+\color black
+profile likelihood ratio
+\size default
+\color inherit
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Difference w.
+ r.
+ t.
+ single channel case: test depends on 
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Distribution under background hypothesis depends on 
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $q_{\mu}^{\text{obs}}$
+\end_inset
+
+ depends on 
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+CLsGenerator/McLimit test statistic
+\end_layout
+
+\begin_layout Itemize
+Number of channels: 
+\begin_inset Formula $n_{c}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Test
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $q_{\mu}=-2\ln\frac{{\cal L}_{1}(\mu)\times{\cal L}_{2}(\mu)\times\text{... \times}{\cal L}_{n_{c}}(\mu)}{{\cal L}_{1}(\mu=0)\times{\cal L}_{2}(\mu=0)\times\text{... \times}{\cal L}_{n_{c}}(\mu=0)}$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow\boxed{q_{\mu}={\displaystyle \sum_{c=1}^{n_{c}}q_{\mu}^{c}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+For each channel
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $q_{\mu}^{c}=-2\ln\left[\frac{\left(\mu s_{\text{nom}}+\sum b_{i}\right)^{N_{\text{obs}}}e^{-\left(\mu s_{\text{nom}}+\sum b_{i}\right)}}{\left(\sum b_{i}\right)^{N_{\text{obs}}}e^{-\sum b_{i}}}\right]$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boxed{q_{\mu}^{c}=2\left(\mu s_{\text{nom}}-N_{\text{obs}}\ln\left(\frac{\mu s_{\text{nom}}+\sum b_{i}}{\sum b_{i}}\right)\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+CLsGenerator/McLimit test statistic
+\end_layout
+
+\begin_layout Itemize
+In single channel case, using 
+\begin_inset Formula $q_{\mu}$
+\end_inset
+
+ or observed yield as test is equivalent
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Everything we said for single channel case remains valid
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Generalizing bayesian method
+\end_layout
+
+\begin_layout Itemize
+Reminder
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset Formula $\text{posterior}\propto\text{likelihood}\times\text{prior}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+\begin_inset Formula ${\displaystyle \int}_{0}^{s_{\text{up}}}\text{posterior}=1-\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Multiple channels: use joint likelihood 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\boxed{{\cal L}_{\text{joint}}={\displaystyle \prod_{c:\text{channels}}{\cal L}_{\text{c}}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Softwares
+\end_layout
+
+\begin_layout Itemize
+CLsGenerator and BayesianMCMC can be used for multiple channels
+\end_layout
+
+\begin_layout BeginFrame
+Validation of CLsGenerator and BayesianMCMC
+\end_layout
+
+\begin_layout Itemize
+We expect that increasing luminosity by factor 
+\begin_inset Formula $N$
+\end_inset
+
+ is equivalent to increasing number of channels (having the same sensitivity)
+ by the same factor (see next two slides)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.3cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Here we check that CLsGenerator and BayesianMCMC are in agreement with this
+ expectation
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Validates in both cases implementation of channel combination
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Demonstration equivalence lumi/#channels (CLsGenerator)
+\end_layout
+
+\begin_layout Itemize
+Single channel: 
+\begin_inset Formula $q_{\mu}=2\left[\mu s-N_{\text{obs}}\ln\frac{\mu s+b}{b}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N$
+\end_inset
+
+ channels: 
+\begin_inset Formula $q_{\mu,1}=2\left[\mu\sum\limits _{c:channels}s_{c}-\sum\limits _{c:channels}N_{\text{obs}}^{c}\ln\frac{\mu s_{c}+b_{c}}{b_{c}}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume yields are the same in all channels (
+\begin_inset Formula $s_{c}=s$
+\end_inset
+
+, 
+\begin_inset Formula $b_{c}=b$
+\end_inset
+
+, 
+\begin_inset Formula $N_{\text{obs}}^{c}=N_{\text{obs}}$
+\end_inset
+
+):
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $q_{\mu,1}=2\left[\mu Ns-N_{\text{obs}}\ln\left(\prod\limits _{c:channels}\frac{\mu s_{c}+b_{c}}{b_{c}}\right)\right]=N\times2\left[\mu s-N_{\text{obs}}\ln\frac{\mu s+b}{b}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow q_{\mu,1}=Nq_{\mu}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Multiplying lumi.
+ by 
+\begin_inset Formula $N$
+\end_inset
+
+: 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $q_{\mu,2}=2\left[\mu s'-N_{\text{obs}}'\ln\frac{\mu s'+b'}{b'}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $s'=Ns$
+\end_inset
+
+, 
+\begin_inset Formula $b'=Nb$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{\text{obs}}'=NN_{\text{obs}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+
+\begin_inset Formula $q_{\mu,2}=N\times2\left[\mu s-N_{\text{obs}}\ln\frac{\mu s+b}{b}\right]=Nq_{\text{\mu}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conclusion: 
+\begin_inset Formula $q_{\mu,1}=q_{\mu,2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Demonstration equivalence lumi/#channels (BayesianMCMC)
+\end_layout
+
+\begin_layout Itemize
+Single channel: 
+\begin_inset Formula ${\cal L}\left(\mu\right)=\frac{\left(\mu s+b\right)^{N_{\text{obs}}}}{N_{\text{obs }}!}e^{-\left(\mu s+b\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N$
+\end_inset
+
+ channels: 
+\begin_inset Formula ${\cal L}_{1}\left(\mu\right)=\prod\limits _{c:channels}{\cal L}_{c}\left(\mu\right)=\prod\limits _{c:channels}\frac{\left(\mu s_{c}+b_{c}\right)^{N_{\text{obs}}^{c}}}{N_{\text{obs }}^{c}!}e^{-\left(\mu s_{c}+b_{c}\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume yields are the same in all channels (
+\begin_inset Formula $s_{c}=s$
+\end_inset
+
+, 
+\begin_inset Formula $b_{c}=b$
+\end_inset
+
+, 
+\begin_inset Formula $N_{\text{obs}}^{c}=N_{\text{obs}}$
+\end_inset
+
+):
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\Rightarrow{\cal L}_{1}\left(\mu\right)=$
+\end_inset
+
+
+\begin_inset Formula $\left[\frac{\left(\mu s+b\right)^{N_{\text{obs}}}}{N_{\text{obs }}!}e^{-\left(\mu s+b\right)}\right]^{N}=\text{\frac{1}{\left(N_{\text{obs}}!\right)^{N}}\left(\mu s+b\right)^{NN_{\text{obs}}}}e^{-N\left(\mu s+b\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Multiplying lumi.
+ by 
+\begin_inset Formula $N$
+\end_inset
+
+: 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula ${\cal L}_{2}\left(\mu\right)=\frac{\left(\mu s'+b'\right)^{N_{\text{obs}}'}}{N_{\text{obs }}'!}e^{-\left(\mu s'+b'\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $s'=Ns$
+\end_inset
+
+, 
+\begin_inset Formula $b'=Nb$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{\text{obs}}'=NN_{\text{obs}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\size small
+\color black
+\begin_inset Formula $\Rightarrow{\cal L}_{2}\left(\mu\right)=\frac{\left(\mu Ns+Nb\right)^{NN_{\text{obs}}}}{\left(NN_{\text{obs }}\right)!}e^{-\left(\mu Ns+Nb\right)}=\frac{N^{NN_{\text{obs}}}}{\left(NN_{\text{obs}}\right)!}\left(\mu s+b\right)^{NN_{\text{obs}}}e^{-N\left(\mu s+b\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Conclusion: 
+\begin_inset Formula ${\cal L}_{1}\left(\mu\right)\propto{\cal L}_{2}\left(\mu\right)$
+\end_inset
+
+ so inference on 
+\begin_inset Formula $\mu$
+\end_inset
+
+ is the same
+\end_layout
+
+\begin_layout BeginFrame
+Validation of CLsGenerator and BayesianMCMC
+\end_layout
+
+\begin_layout Itemize
+As always, consider
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $N_{obs}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $b=0.82$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s_{\text{nom}}=2.49$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Compare two limits
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Itemize
+first one computed from one channel with
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $N_{obs}=1\times N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $b=0.82\times N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s_{\text{nom}}=2.49\times N$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+ 
+\begin_inset Box Boxed
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Itemize
+second one computed from 
+\begin_inset Formula $N$
+\end_inset
+
+ identical channels with
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $N_{obs}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $b=0.82$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s_{\text{nom}}=2.49$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Validation of CLsGenerator and BayesianMCMC
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/cLimitLumiVsNoChannels.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Expectation verified in both CLsGenerator and BayesianMCMC
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Uncertainties
+\end_layout
+
+\begin_layout BeginFrame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{2cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+Large Uncertainties}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Problematic
+\end_layout
+
+\begin_layout Itemize
+Nominal signal and background yields (
+\begin_inset Formula $s_{\text{nom}}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+) not known with infinite precision
+\end_layout
+
+\begin_layout Itemize
+Two types of uncertainties
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Statistical (finite sample size)
+\end_layout
+
+\begin_layout Itemize
+Systematic (e.g.
+ JES, JVF, etc.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color magenta
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ How to account for uncertainties in limit setting ?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Statistical uncertainties
+\end_layout
+
+\begin_layout Itemize
+Consider treatment of stat.
+ uncert.
+ as done in McLimit, CLsGenerator and BayesianMCMC (HistFactory makes things
+ differently)
+\end_layout
+
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Signal and background are considered as random variables with
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+average = nominal yields (
+\begin_inset Formula $\sum w_{i}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+standard deviation =
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+left
+\backslash
+{
+\backslash
+begin{matrix} 
+\backslash
+text{stat.
+ uncert.
+ } (
+\backslash
+sqrt{
+\backslash
+sum w_i^2}) 
+\backslash
+text{ when nominal yield} 
+\backslash
+neq 0
+\backslash
+
+\backslash
+ 
+\backslash
+text{upper limit (1.14 lumi rescaled) when yield}=0  
+\backslash
+end{matrix}
+\backslash
+right.$ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.3cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size small
+\color blue
+Single channel
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.7cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size small
+\color blue
+\begin_inset Formula $\boxed{{\color{black}{\cal \mathcal{L}}(\mu,s',\{b_{i}'\})=\frac{\left(\mu s'+\sum_{i}b_{i}'\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-(\mu s'+\sum_{i}b_{i}')}\underbrace{f(s';s_{\text{nom}},\sigma_{s})}_{\text{constraint signal}}\prod\limits _{i}\underbrace{f(b_{i}';b_{i},\sigma_{i})}_{\text{constraint background i}}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color magenta
+Terminology: 
+\begin_inset Formula $s'$
+\end_inset
+
+ and 
+\begin_inset Formula $\{b_{i}'\}$
+\end_inset
+
+ are called nuisance parameters
+\end_layout
+
+\begin_layout BeginFrame
+What McLimit/CLsGenerator/BayesianMCMC do ?
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size small
+\color blue
+Single channel
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.7cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size small
+\color blue
+\begin_inset Formula $\boxed{{\color{black}{\cal \mathcal{L}}(\mu,s',\{b_{i}'\})=\frac{\left(\mu s'+\sum_{i}b_{i}'\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-(\mu s'+\sum_{i}b_{i}')}\underbrace{f(s';s_{\text{nom}},\sigma_{s})}_{\text{constraint signal}}\prod\limits _{i}\underbrace{f(b_{i}';b_{i},\sigma_{i})}_{\text{constraint background i}}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+McLimit/CLsGenerator toss pseudo-experiments in which
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
+ is sampled from marginal likelihood (hence the hybrid nature of the method)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\size footnotesize
+\color magenta
+\begin_inset Formula ${\cal \mathcal{L}}(\mu)={\displaystyle \int}\frac{\left(\mu s'+\sum_{i}b_{i}'\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-(\mu s'+\sum_{i}b_{i}')}f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'\quad(\square)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Test is computed using nominal values of nuisance parameters
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\size footnotesize
+\color magenta
+\begin_inset Formula ${\cal \mathcal{L}}(\mu,s'=s_{nom},\{b_{i}'\}=\{b_{i}\})=\frac{\left(\mu s_{\text{nom}}+\sum_{i}b_{i}\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-\left(\mu s_{\text{nom}}+\sum_{i}b_{i}\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+BayesianMCMC uses marginal likelihood 
+\size small
+\color black
+
+\begin_inset Formula $(\square)$
+\end_inset
+
+ 
+\size default
+\color inherit
+as posterior (integration done by Markov Chain Monte Carlo)
+\end_layout
+
+\begin_layout BeginFrame
+Visualization of Markov Chain
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/MarkovChainExample.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Choice of constraint terms
+\end_layout
+
+\begin_layout Itemize
+This choice is to some extend arbitrary
+\end_layout
+
+\begin_layout Itemize
+However, care must be taken because some choices behave sometimes badly
+\end_layout
+
+\begin_layout Itemize
+Common choices
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color black
+Constraint p.
+ d.
+ f.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color black
+Available in
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+Normal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+McLimit, CLsGenerator, BayesianMCMC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+Log-normal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CLsGenerator, BayesianMCMC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+Gamma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CLsGenerator, BayesianMCMC
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Comparison of distributions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/plotNormalLogNGamma.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Effect of statistical uncertainty and constraint p.
+ d.
+ f.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{\text{obs}}=1$
+\end_inset
+
+, 
+\begin_inset Formula $b=0.82$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{\text{nom}}=2.49$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Statistical uncertainty on 
+\begin_inset Formula $b=0,...,1.4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+CLsGenerator
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-1.3cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cLimit.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+BayesianMCMC
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-1.3cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cLimitBayesianMCMCOnlyStatUncertOnBckg.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+CLsGenerator and BayesianMCMC give identical results
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color red
+It can be shown that it's always the case when stat.
+ uncert.
+ on signal=0 !
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Proof of equivalence between 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ and Bayesian
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ method
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\color black
+\begin_inset Formula $\alpha=CL_{s}(\mu_{\text{up}})=\frac{CL_{s+b}(\mu_{\text{up}})}{CL_{b}}=\frac{\sum\limits _{N=0}^{N_{\text{obs}}}{\cal \mathcal{L}}(\mu_{\text{up}})}{\sum\limits _{N=0}^{N_{\text{obs}}}{\cal \mathcal{L}}(\mu=0)}=\frac{{\displaystyle \int\sum\limits _{N=0}^{N_{\text{obs}}}}\frac{\left(\mu_{\text{up}}s'+\sum_{i}b_{i}'\right)^{N}}{N!}e^{-(\mu_{\text{up}}s'+\sum_{i}b_{i}')}f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}{{\displaystyle \int\sum\limits _{N=0}^{N_{\text{obs}}}}\frac{\left(\sum b_{i}'\right)^{N}}{N!}e^{-\sum_{i}b_{i}'}f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}=\frac{{\displaystyle \int CL_{s+b}(\mu_{\text{up}},s',\{b_{i}'\})}f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}{{\displaystyle \int CL_{b}(\{b_{i}'\})}f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Bayesian w/ uniform prior
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\color black
+\begin_inset Formula $1-\alpha=\frac{{\displaystyle \int_{0}^{\mu_{\text{up}}}{\cal L}(\mu)\text{d}\mu}}{{\displaystyle \int_{0}^{\infty}{\cal L}(\mu)\text{d}\mu}}=\frac{{\displaystyle \int}\left[{\displaystyle {\displaystyle \int}_{0}^{\mu_{\text{up}}}}\frac{\left(\mu s'+\sum_{i}b_{i}'\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-(\mu s'+\sum_{i}b_{i}')}\text{d}\mu\right]f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}{{\displaystyle \int}\left[{\displaystyle {\displaystyle \int}_{0}^{\infty}}\frac{\left(\mu s'+\sum_{i}b_{i}'\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-(\mu s'+\sum_{i}b_{i}')}\text{d}\mu\right]f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}=\frac{{\displaystyle \int}\left[\frac{\Gamma(N_{\text{obs}+1};\sum b_{I}')-\Gamma(N_{\text{obs}+1};\mu_{\text{up}}s'+\sum b_{I}')}{s'\Gamma(N_{\text{obs}}+1)}\right]f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}{{\displaystyle \int}\left[\frac{\Gamma(N_{\text{obs}+1};\sum b_{I}')}{s'\Gamma(N_{\text{obs}}+1)}\right]f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Proof of equivalence between 
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ and Bayesian
+\end_layout
+
+\begin_layout Itemize
+Bayesian w/ uniform prior (continued)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\color black
+\begin_inset Formula $\Rightarrow1-\alpha=1-\frac{{\displaystyle \int}\left[\frac{\Gamma(N_{\text{obs}+1};\mu_{\text{up}}s'+\sum b_{I}')}{s'\Gamma(N_{\text{obs}}+1)}\right]f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}{{\displaystyle \int}\left[\frac{\Gamma(N_{\text{obs}+1};\sum b_{I}')}{s'\Gamma(N_{\text{obs}}+1)}\right]f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}=1-\frac{{\displaystyle \int}\left[\frac{CL_{s+b}(\mu_{\text{up}},s',\{b_{i}'\})}{s'}\right]f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}{{\displaystyle \int}\left[\frac{CL_{b}(\{b_{i}'\})}{s'}\right]f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\text{d}s'\text{\prod\limits _{i}d}b_{i}'}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $CL_{s}$
+\end_inset
+
+ and bayesian w/ uniform prior are equivalent if signal perfectly known:
+ 
+\begin_inset Formula $s'=s_{\text{nom}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Effect of statistical uncertainty and constraint p.
+ d.
+ f.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\color black
+normal (top), logN (middle) and gamma (bottom)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.3cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cDistrNormal.png
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.4cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cDistrLogN.png
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.4cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cDistrGamma.png
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Effect of statistical uncertainty and constraint p.
+ d.
+ f.
+\end_layout
+
+\begin_layout Itemize
+Truncation at 0 in normal case doesn't smear distributions but shifts them
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Happens for both b and s+b distribs 
+\begin_inset Formula $\Rightarrow\mu$
+\end_inset
+
+ doesn't change much 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+logN smears less than gamma 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ better 
+\begin_inset Formula $\mu$
+\end_inset
+
+ for logN than for gamma
+\end_layout
+
+\begin_layout Itemize
+What is the best choice ? logN ?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size tiny
+\color black
+CLsGenerator
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-.8cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cCPUTime.png
+	scale 28
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Effect of statistical uncertainty and constraint p.
+ d.
+ f.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{\text{obs}}=1$
+\end_inset
+
+, 
+\begin_inset Formula $b=0.82$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{\text{nom}}=2.49$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Statistical uncertainty on 
+\begin_inset Formula $s_{\text{nom}}$
+\end_inset
+
+ and 
+\begin_inset Formula $b=0,...,1.4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+CLsGenerator
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-1.3cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cLimitCLsGeneratorStatUncertOnSigAndBckg.pdf
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+BayesianMCMC
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-1.3cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cLimitBayesianMCMCStatUncertOnSigAndBckg.pdf
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+CLsGenerator and BayesianMCMC give very different results for large uncertaintie
+s
+\end_layout
+
+\begin_layout BeginFrame
+Effect of statistical uncertainty and constraint p.
+ d.
+ f.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\color black
+normal (top), logN (middle) and gamma (bottom)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.3cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cDistrNormal2.png
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.4cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cDistrLogN2.png
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.4cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/cDistrGamma2.png
+	scale 18
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Effect of statistical uncertainty and constraint p.
+ d.
+ f.
+\end_layout
+
+\begin_layout Itemize
+logN smears less than gamma 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ better 
+\begin_inset Formula $\mu$
+\end_inset
+
+ for logN than for gamma (as in previous case)
+\end_layout
+
+\begin_layout Itemize
+Normal case now very different from previous case 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+s+b distribution is now 
+\begin_inset Quotes eld
+\end_inset
+
+more smeared
+\begin_inset Quotes erd
+\end_inset
+
+ than b alone distribution 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ have to go to larger 
+\begin_inset Formula $\mu$
+\end_inset
+
+ to reach given confidence level
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Systematic uncertainties
+\end_layout
+
+\begin_layout Itemize
+Systematic uncertainties more complicated than statistical ones
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Correlations between samples and channels
+\end_layout
+
+\begin_layout Itemize
+Interpolation/extrapolation problem
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Interpolation/extrapolation of systematics
+\end_layout
+
+\begin_layout Itemize
+For one sample and one systematic we know 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nominal yield: 
+\color red
+
+\begin_inset Formula $N_{\text{nom}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Yield with systematic varied 
+\begin_inset Formula $1\sigma$
+\end_inset
+
+ up: 
+\color red
+
+\begin_inset Formula $N_{\uparrow}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Yield with systematic varied 
+\begin_inset Formula $1\sigma$
+\end_inset
+
+ down: 
+\color red
+
+\begin_inset Formula $N_{\downarrow}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But we need a continuous parametrization: 
+\color red
+
+\begin_inset Formula $N(\eta)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\eta$
+\end_inset
+
+ defined such that 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $N(\eta=0)=N_{\text{nom}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N(\eta=+1)=N_{\uparrow}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N(\eta=-1)=N_{\downarrow}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+How to interpolate and extrapolate ?
+\end_layout
+
+\begin_layout BeginFrame
+Interpolation/extrapolation of systematics
+\end_layout
+
+\begin_layout Standard
+Example : 
+\begin_inset Formula $N_{\text{nom}}=15,$
+\end_inset
+
+ 
+\begin_inset Formula $N_{\uparrow}=21$
+\end_inset
+
+, 
+\begin_inset Formula $N_{\downarrow}=10.5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename macros/InterpExtrapPrinciple1.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Interpolation/extrapolation of systematics
+\end_layout
+
+\begin_layout Standard
+Example : 
+\begin_inset Formula $N_{\text{nom}}=15,$
+\end_inset
+
+ 
+\begin_inset Formula $N_{\uparrow}=21$
+\end_inset
+
+, 
+\begin_inset Formula $N_{\downarrow}=10.5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename macros/InterpExtrapPrinciple2.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Interpolation/extrapolation of systematics
+\end_layout
+
+\begin_layout Itemize
+Rather than using 
+\begin_inset Formula $N_{\text{nom},\uparrow,\downarrow}$
+\end_inset
+
+, let's use
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $f^{\uparrow}=\frac{N_{\uparrow}-N_{\text{nom}}}{N_{\text{nom}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f^{\downarrow}=\frac{N_{\downarrow}-N_{\text{nom}}}{N_{\text{nom}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f^{\text{syst}}(\eta)=\frac{N(\eta)}{N_{\text{nom}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+One has 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $f^{\text{syst}}(\eta=0)$
+\end_inset
+
+ = 1
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f^{\text{syst}}(\eta=-1)=1+f^{\downarrow}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f^{\text{syst}}(\eta=1)=1+f^{\uparrow}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\color red
+Goal: find an inter/extrapolation algorithm such that these relations are
+ satisfied (at least approximately) 
+\end_layout
+
+\begin_layout BeginFrame
+Interpolation/extrapolation of systematics
+\end_layout
+
+\begin_layout Itemize
+Inter/extrapolation algorithms investigated here
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color black
+Algorithm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color black
+Available in
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+mclimit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+McLimit, CLsGenerator
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+linear
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CLsGenerator, BayesianMCMC, RooStats
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+exponential
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CLsGenerator, BayesianMCMC, RooStats
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Remark: other choices available in RooStats and BayesianMCMC
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RooStats default: polynomial interpolation/exponential extrapolation
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+First look at mclimit, linear and exponential algorithms
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/FewExamplesOffsyst.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Closer look at mclimit algorithm
+\end_layout
+
+\begin_layout Itemize
+What does mclimit give for 
+\begin_inset Formula $\eta=-1,0,+1$
+\end_inset
+
+ ?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $f^{\text{syst}}(\eta=0)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $f^{\uparrow}\geq0$
+\end_inset
+
+: 
+\begin_inset Formula $f^{\text{syst}}(\eta=+1)=1+f^{\uparrow}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $f^{\downarrow}\geq0$
+\end_inset
+
+: 
+\begin_inset Formula $f^{\text{syst}}(\eta=-1)=1+f^{\downarrow}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $f^{\uparrow}<0$
+\end_inset
+
+: 
+\begin_inset Formula $f^{\text{syst}}(\eta=+1)=e^{f^{\uparrow}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $f^{\downarrow}<0$
+\end_inset
+
+: 
+\begin_inset Formula $f^{\text{syst}}(\eta=-1)=e^{f^{\downarrow}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\color blue
+In the last two cases, 
+\begin_inset Formula $f^{\text{syst}}\simeq1+f^{\uparrow(\downarrow)}$
+\end_inset
+
+ only if 
+\family roman
+
+\begin_inset Formula $f^{\uparrow(\downarrow)}\simeq0$
+\end_inset
+
+ (if 
+\begin_inset Formula $f^{\uparrow(\downarrow)}\simeq-1$
+\end_inset
+
+, difference can be large).
+\end_layout
+
+\begin_layout BeginFrame
+Closer look at mclimit algorithm
+\end_layout
+
+\begin_layout Itemize
+What does mclimit give when uncertainties are symetric: 
+\begin_inset Formula $f^{\uparrow}=-f^{\downarrow}$
+\end_inset
+
+ ?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\eta>0$
+\end_inset
+
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $f^{\uparrow}\geq0$
+\end_inset
+
+: 
+\begin_inset Formula $f^{syst}=1+\eta f^{\uparrow}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f^{\uparrow}<0$
+\end_inset
+
+: 
+\begin_inset Formula $f^{syst}=e^{\eta f^{\uparrow}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\eta<0$
+\end_inset
+
+: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $f^{\downarrow}\ge0$
+\end_inset
+
+: 
+\begin_inset Formula $f^{syst}=1-\eta f^{\downarrow}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f^{\downarrow}<0$
+\end_inset
+
+: 
+\begin_inset Formula $f^{syst}=e^{-\eta f^{\downarrow}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\color blue
+mclimit is equivalent to linear for 
+\begin_inset Formula $\eta>0$
+\end_inset
+
+ if 
+\begin_inset Formula $f^{\uparrow}\geq0$
+\end_inset
+
+ or 
+\begin_inset Formula $\eta<0$
+\end_inset
+
+ if 
+\begin_inset Formula $f^{\downarrow}\geq\text{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Statistical model
+\end_layout
+
+\begin_layout Itemize
+Consider treatment of syst.
+ uncert.
+ as done in McLimit, CLsGenerator and BayesianMCMC
+\end_layout
+
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+For each systematic, introduce a nuisance parameter 
+\begin_inset Formula $\eta_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Likelihood
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.3cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size small
+\color blue
+Single channel
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color black
+\begin_inset Formula $\boxed{{\color{black}{\cal \mathcal{L}}(\mu,\{\eta_{j}\})=\frac{\left(\mu s'+\sum_{i}b_{i}'\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-(\mu s'+\sum_{i}b_{i}')}\prod\limits _{j}\underbrace{g(\eta_{j})}_{\text{constraint systematic }j}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $b_{i}'=b_{i}'(\{\eta_{j}\})=b_{i}\times\prod\limits _{j}f_{ij}^{\text{syst}}(\eta_{j})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s'=s'(\{\eta_{j}\})=s_{\text{nom}}\times\prod\limits _{j}f_{j}^{\text{syst}}(\eta_{j})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g(\eta_{j})={\cal N}(0,1)$
+\end_inset
+
+ (standard normal distribution)
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+What McLimit/CLsGenerator/BayesianMCMC do ?
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size small
+\color blue
+Single channel
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color black
+\begin_inset Formula $\boxed{{\color{black}{\cal \mathcal{L}}(\mu,\{\eta_{j}\})=\frac{\left(\mu s'+\sum_{i}b_{i}'\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-(\mu s'+\sum_{i}b_{i}')}\prod\limits _{j}\underbrace{g(\eta_{j})}_{\text{constraint systematic }j}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+McLimit/CLsGenerator toss pseudo-experiments in which
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $N_{\text{obs}}$
+\end_inset
+
+ is sampled from marginal likelihood (hence the hybrid nature of the method)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\size footnotesize
+\color magenta
+\begin_inset Formula ${\cal \mathcal{L}}(\mu)={\displaystyle \int}\frac{\left(\mu s'+\sum_{i}b_{i}'\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-(\mu s'+\sum_{i}b_{i}')}\text{\prod\limits _{j}g(\eta_{j})d}\eta_{j}\quad(\triangle)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Test is computed using nominal values of nuisance parameters
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\size footnotesize
+\color magenta
+\begin_inset Formula ${\cal \mathcal{L}}(\mu,\{\eta_{j}\}=0)=\frac{\left(\mu s_{\text{nom}}+\sum_{i}b_{i}\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-\left(\mu s_{\text{nom}}+\sum_{i}b_{i}\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+BayesianMCMC uses marginal likelihood 
+\size small
+\color black
+
+\begin_inset Formula $(\triangle)$
+\end_inset
+
+ 
+\size default
+\color inherit
+as posterior (integration done by Markov Chain Monte Carlo)
+\end_layout
+
+\begin_layout BeginFrame
+Effect of inter/extrapolation algorithms
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{\text{obs}}=1$
+\end_inset
+
+, 
+\begin_inset Formula $b=0.82$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{\text{nom}}=2.49$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Systematic uncertainty on 
+\begin_inset Formula $b$
+\end_inset
+
+: 
+\begin_inset Formula $f^{\uparrow}=-f^{\downarrow}=0,0.1,0.2,\hdots,0.9$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+CLsGenerator
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.8cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/muUpVsSystCLsGen_case1.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+BayesianMCMC
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-.8cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/muUpVsSystBayes_case1.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+CLsGenerator and BayesianMCMC give identical results ! (as for stat.
+ uncert.)
+\end_layout
+
+\begin_layout BeginFrame
+Effect of inter/extrapolation algorithms
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{\text{obs}}=100$
+\end_inset
+
+, 
+\begin_inset Formula $b=100$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{\text{nom}}=20$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Systematic uncertainty on 
+\begin_inset Formula $b$
+\end_inset
+
+: 
+\begin_inset Formula $f^{\uparrow}=-f^{\downarrow}=0,0.1,0.2,\hdots,0.9$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+CLsGenerator
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.8cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/muUpVsSystCLsGen_case2.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+BayesianMCMC
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.8cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/muUpVsSystBayes_case2.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+CLsGenerator and BayesianMCMC give identical results ! (as for stat.
+ uncert.)
+\end_layout
+
+\begin_layout BeginFrame
+Effect of inter/extrapolation algorithms
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N_{\text{obs}}=1$
+\end_inset
+
+, 
+\begin_inset Formula $b=0.82$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{\text{nom}}=2.49$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Systematic uncertainty on 
+\begin_inset Formula $s_{\text{nom}}$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ (100% correlated): 
+\begin_inset Formula $f^{\uparrow}=-f^{\downarrow}=0,\hdots,0.6$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+CLsGenerator
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.8cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/muUpVsSystCLsGen_case3.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+BayesianMCMC
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.8cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/muUpVsSystBayes_case3.pdf
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+CLsGenerator and BayesianMCMC give very different results for large systematics
+\end_layout
+
+\begin_layout BeginFrame
+Effect of inter/extrapolation algorithms
+\end_layout
+
+\begin_layout Itemize
+Comment on CLsGenerator: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $q_{\mu}=2\left(\mu s_{\text{nom}}-N_{obs}\ln\frac{\mu s_{\text{nom}}+\sum b_{i}}{\sum b_{i}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+When 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $f^{\downarrow}\ll0$
+\end_inset
+
+, 
+\begin_inset Formula $f^{syst}=0$
+\end_inset
+
+ quite frequently
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $\Rightarrow s=b=0\Rightarrow N_{obs}=0\Rightarrow q_{\mu}=2\mu s\text{ (for both hypothesis)\Rightarrow}$
+\end_inset
+
+CL
+\begin_inset Formula $_{s+b}$
+\end_inset
+
+ and CL
+\begin_inset Formula $_{s}$
+\end_inset
+
+ can't go to very low values as 
+\begin_inset Formula $\mu$
+\end_inset
+
+ increases
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Effect of inter/extrapolation algorithms
+\end_layout
+
+\begin_layout Itemize
+Consider the point 
+\begin_inset Formula $f^{\uparrow}=-f^{\downarrow}=0.6$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "32col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/LLR_syst6_mu1.png
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\color black
+\begin_inset Formula ${\mu=1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "32col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/LLR_syst6_mu10.png
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\color black
+\begin_inset Formula $\mu=10$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "32col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/LLR_syst6_mu50.png
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\color black
+\begin_inset Formula $\mu=50$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/CLsVsMu_case3_SystEq6.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+More realistic case: LHCP 
+\begin_inset Formula $\mu\mu$
+\end_inset
+
+ channel
+\end_layout
+
+\begin_layout Itemize
+Including all stat.
+ and syst.
+ uncertainties
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mclimit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+linear
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+expo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Expected median
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.69
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Expected 
+\begin_inset Formula $\pm1\sigma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.44-2.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.43-2.07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.43-2.07
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Expected 
+\begin_inset Formula $\pm2\sigma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.26-3.52
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.27-3.53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.27-3.54
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Observed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.67
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.68
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.67
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Not much difference
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Itemize
+CPU time 
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+
+\size scriptsize
+\color black
+ran
+\size default
+\color inherit
+ 
+\size scriptsize
+\color black
+clgen.observedSigStrengthFor95excl(0,1e5,cls) in identical conditions several
+ times to make this distrib
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "75col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+CLsGenerator
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-.85cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/CPUtime.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Understanding 
+\begin_inset Formula $f^{\text{syst}}$
+\end_inset
+
+ distribution: exponential case
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f^{\text{syst}}$
+\end_inset
+
+ sometimes looks very weird.
+ Let's consider exponential algo with 
+\begin_inset Formula $f^{\downarrow}=-0.1$
+\end_inset
+
+ and 
+\begin_inset Formula $f^{\uparrow}=0.6$
+\end_inset
+
+ (on the plot, Variation=
+\begin_inset Formula $f^{\text{syst}}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/fsystDistr_minus01_plus06_expo.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Where does this funny looking shape comes from ?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We have 
+\begin_inset Formula $f^{\text{syst}}=(1+f^{\uparrow})^{\eta}$
+\end_inset
+
+ for 
+\begin_inset Formula $\eta>0$
+\end_inset
+
+ (
+\begin_inset Formula $(1+f^{\uparrow})^{-\eta}$
+\end_inset
+
+ for 
+\begin_inset Formula $\eta<0$
+\end_inset
+
+ ) with 
+\begin_inset Formula $\eta\sim\mathcal{N}(0,1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus 
+\size scriptsize
+\color black
+
+\begin_inset Formula $f^{\text{syst}}\sim\frac{1}{\sqrt{2\pi}|\ln\left(1+f^{\uparrow(\downarrow)}\right)|f^{syst}}e^{-\frac{1}{2}\left(\frac{\ln f^{syst}}{\ln\left(1+f^{\uparrow(\downarrow)}\right)}\right)^{2}}$
+\end_inset
+
+ , 
+\size default
+\color inherit
+i.e.
+ 
+\begin_inset Formula $f^{\text{syst}}\sim\text{piecewise }log\mathcal{N}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Is such a shape desirable ?
+\end_layout
+
+\begin_layout BeginFrame
+Understanding 
+\begin_inset Formula $f^{\text{syst}}$
+\end_inset
+
+ distribution: linear and mclimit cases
+\end_layout
+
+\begin_layout Itemize
+linear case is obvious: 
+\begin_inset Formula $f^{\text{\text{syst}}}\sim$
+\end_inset
+
+ piecewise gaussian truncated at 0.
+ Using values of previous slide we have
+\end_layout
+
+\begin_layout Itemize
+mclimit case: doesn't seem to be possible to determine analytic solution.
+ Using values of previous slide we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.5cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+linear
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-1.3cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/fsystDistr_minus01_plus06_linear.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size tiny
+\color black
+mclimit
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-1.3cm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/fsystDistr_minus01_plus06_mclimit.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Extreme cases
+\end_layout
+
+\begin_layout Itemize
+Consider the point 
+\begin_inset Formula $f^{\uparrow}=-f^{\downarrow}=0.9$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu=5.5$
+\end_inset
+
+ with 
+\begin_inset Formula $N_{\text{obs}}=100$
+\end_inset
+
+, 
+\begin_inset Formula $b=100$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{\text{nom}}=20$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "32col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/fsyst_mclimit_test2_9_9.png
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "32col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/fsyst_linear_test2_9_9.png
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "32col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/fsyst_expo_test2_9_9.png
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "32col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/LLR_mclimit_test2_9_9.png
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.4cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size tiny
+\color black
+mclimit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "32col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/LLR_linear_test2_9_9.png
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.4cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size tiny
+\color black
+linear
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "32col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/LLR_expo_test2_9_9.png
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.4cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size tiny
+\color black
+expo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Using truncated piecewise gaussian (linear) and piecewise 
+\begin_inset Formula $log\text{\mathcal{N}}$
+\end_inset
+
+ (expo) seems absurd 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+mclimit much more reasonable in such cases
+\end_layout
+
+\begin_layout BeginFrame
+Summary on inter/extrapolation
+\end_layout
+
+\begin_layout Itemize
+mclimit, linear and exponential algorithms give similar results for small
+ systematics
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Any choice seems rather safe in this case
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.1cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Differences can be significant for large systematics
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+mclimit seems to be the 
+\begin_inset Quotes eld
+\end_inset
+
+most reasonable
+\begin_inset Quotes erd
+\end_inset
+
+ choice in this case
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Summary on inter/extrapolation
+\end_layout
+
+\begin_layout Itemize
+mclimit
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+pros: 
+\begin_inset Formula $f^{syst}$
+\end_inset
+
+ smooth, 
+\begin_inset Formula $f^{syst}(\eta)\text{≠0 \forall\eta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+cons: 
+\begin_inset Formula $f^{syst}(\eta=\pm1)\neq1+f^{\uparrow(\downarrow)}$
+\end_inset
+
+ when 
+\begin_inset Formula $f^{\uparrow(\downarrow)}<0$
+\end_inset
+
+, 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+linear
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+pros: simple, fast
+\end_layout
+
+\begin_layout Itemize
+cons: 
+\begin_inset Formula $f^{syst}(\eta)\text{=0}$
+\end_inset
+
+ in some cases (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ problem when signal syst large)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+expo
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+pros: simple, 
+\begin_inset Formula $f^{syst}(\eta)\text{≠0 \forall\eta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+cons: 
+\begin_inset Formula $f^{syst}$
+\end_inset
+
+ can be very discontinuous for large 
+\begin_inset Formula $f^{\uparrow(\downarrow)}$
+\end_inset
+
+, slow
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Summary on inter/extrapolation
+\end_layout
+
+\begin_layout Itemize
+Systematics are such a pain ! It's good that we're not affected too much
+ by them in the same-sign analysis
+\end_layout
+
+\begin_layout BeginFrame
+Summary of CLsGenerator, BayesianMCMC and McLimit
+\end_layout
+
+\begin_layout Itemize
+Full statistical model
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{0.3cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size small
+\color blue
+Single channel
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-0.2cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\color black
+\begin_inset Formula $\boxed{{\color{black}{\cal \mathcal{L}}(\mu,s',\{b_{i}'\},\{\eta_{j}\})=\frac{\left(\mu s''+\sum_{i}b_{i}''\right)^{N_{\text{obs}}}}{N_{\text{obs}}!}e^{-(\mu s''+\sum_{i}b_{i}'')}f(s';s_{\text{nom}},\sigma_{s})\prod\limits _{i}f(b_{i}';b_{i},\sigma_{i})\prod\limits _{j}g(\eta_{j})}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $b_{i}''=b_{i}''(\{\eta_{j}\},b_{i}')=b_{i}'\times\prod\limits _{j}f_{ij}^{\text{syst}}(\eta_{j})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s''=s''(\{\eta_{j}\},s')=s'\times\prod\limits _{j}f_{j}^{\text{syst}}(\eta_{j})$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Marginal model: likelihood integrated over all nuisance parameters
+\end_layout
+
+\begin_layout Itemize
+McLimit, CLsGenerator
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Test: 
+\begin_inset Formula $q_{\mu}=-2\ln\frac{{\cal L}(\mu,s'=s_{\text{nom}},\{b_{i}'\}=\{b_{i}\},\{\eta_{j}\}=0)}{{\cal L}(\mu=0)}$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+BayesianMCMC
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Integrate marginal likelihood
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Conclusion
+\end_layout
+
+\begin_layout Itemize
+Limits are arbitrary in many ways
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Make cross-checks !
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+All checks performed to validate CLsGenerator and BayesianMCMC are successful
+ so far
+\end_layout
+
+\begin_layout Itemize
+CLsGenerator and Bayesian w/ uniform prior are equivalent in Single channel
+ - No uncertainties case
+\end_layout
+
+\begin_layout Itemize
+Analytical solutions exists in Single channel - No uncertainties case
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $ $
+\end_inset
+
+CLsGenerator and Bayesian w/ uniform prior are equivalent in Single channel
+ - No uncertainties case when no uncertainty on signal
+\end_layout
+
+\begin_layout BeginFrame
+Vrac
+\end_layout
+
+\begin_layout Itemize
+Popper
+\end_layout
+
+\begin_layout Itemize
+Construction Neyman
+\end_layout
+
+\begin_layout Itemize
+Vizualisation Markov Chain
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document
